@@ -1,7 +1,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 body {
-  background: url("../New folder/bg desktop.png"), #ff7a7a;
+  background: url("../New folder/bg desktop.png"), rgb(192, 222, 250);
   background-position: center;
   background-repeat: repeat;
   font-size: 1em;
@@ -9,7 +9,7 @@ body {
 }
 @media (min-width: 768px) {
   body {
-    background: url("../New folder/bg mobile.png"), #ff7a7a;
+    background: url("../New folder/bg mobile.png"), rgb(192, 222, 250);
     background-position: center;
     background-repeat: repeat;
     opacity: 3.5;
@@ -43,7 +43,7 @@ main {
 }
 
 .content {
-  color: white ;
+  color: gray ;
   text-align: center;
   padding: 1em;
 }
@@ -75,7 +75,7 @@ main {
 }
 
 .signup__log {
-  box-shadow: 0px 0.45em 0px 0px #df6d6d;
+  box-shadow: 0px 0.45em 0px 0px #e76f6f;
   background-color: #6055a5;
   padding: 0.5em;
   text-align: inherit;
@@ -150,7 +150,7 @@ input[type=submit]:hover {
   color: #b9b6d3;
 }
 .terms-notice span {
-  color: #ff7a7a;
+  color: #df7e7e;
   font-weight: bolder;
 }
 
