@@ -12,30 +12,29 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
 
 // Handle login form submission
 app.post('/register', async (req, res) => {
-  const { 'first-name': firstName, 'last-name': lastName, email, password } = req.body;
-
-  if (!firstName || !lastName || !email || !password) {
-    return res.status(400).send('All fields are required.');
-  }
-
-  // Hash the password
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  const query = `
-    INSERT INTO users (first_name, last_name, email, password)
-    VALUES (?, ?, ?, ?)
-  `;
-
-  db.run(query, [firstName, lastName, email, hashedPassword], function(err) {
-    if (err) {
-      console.error(err.message);
-      return res.status(400).send('User already exists or database error.');
+    const { 'first-name': firstName, 'last-name': lastName, email, password } = req.body;
+  
+    if (!firstName || !lastName || !email || !password) {
+      return res.status(400).json({ success: false, message: 'All fields are required.' });
     }
-
-    // Redirect to dashboard on success
-    return res.redirect('/dashboard.html');
+  
+    const hashedPassword = await bcrypt.hash(password, 10);
+  
+    const query = `
+      INSERT INTO users (first_name, last_name, email, password)
+      VALUES (?, ?, ?, ?)
+    `;
+  
+    db.run(query, [firstName, lastName, email, hashedPassword], function(err) {
+      if (err) {
+        console.error(err.message);
+        return res.status(400).json({ success: false, message: 'User already exists or database error.' });
+      }
+  
+      return res.status(200).json({ success: true, message: 'Account created! Redirecting...' });
+    });
   });
-});
+  
 
 // Launch server
 app.listen(PORT, () => {
