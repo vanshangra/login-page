@@ -36,11 +36,3 @@ A responsive full-stack student dashboard web app built using Node.js, Express, 
 - **Extras:** bcrypt (for hashing), body-parser
 
 ---
-
-## 🚀 Getting Started
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/vanshangra/login-page.git
-cd login-page
