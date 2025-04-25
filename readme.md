@@ -42,5 +42,5 @@ A responsive full-stack student dashboard web app built using Node.js, Express, 
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/studentportalx.git
-cd studentportalx
+git clone https://github.com/vanshangra/login-page.git
+cd login-page
